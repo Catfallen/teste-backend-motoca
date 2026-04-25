@@ -15,8 +15,7 @@ Route::get('/vehicles/{vehicle}', [VehicleController::class, 'show']);
 // Leads (criação pública — requisito importante)
 Route::post('/leads', [LeadController::class, 'store']);
 
-// Listar leads por veículo (diferencial)
-Route::get('/vehicles/{id}/leads', [LeadController::class, 'byVehicle']);
+
 
 // Auth
 Route::post('/login', [AuthController::class, 'login']);
@@ -35,4 +34,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/leads/{lead}', [LeadController::class, 'show']);
     Route::put('/leads/{lead}', [LeadController::class, 'update']);
     Route::delete('/leads/{lead}', [LeadController::class, 'destroy']);
+
+    // Listar leads por veículo (diferencial)
+Route::get('/vehicles/{id}/leads', [LeadController::class, 'byVehicle']);
 });
