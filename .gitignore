@@ -1,0 +1,45 @@
+# Dependencies
+/vendor
+/node_modules
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Laravel
+/storage/*.key
+/storage/logs
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
+/bootstrap/cache/*.php
+
+# Build files
+/public/build
+/public/hot
+/public/storage
+
+# Testing
+.phpunit.cache
+.phpunit.result.cache
+
+# Logs
+npm-debug.log
+yarn-error.log
+
+# IDEs
+/.idea
+/.vscode
+/.fleet
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Laravel Sail / Homestead
+Homestead.json
+Homestead.yaml
+
+# Auth / private configs
+auth.json
