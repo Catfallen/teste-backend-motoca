@@ -9,11 +9,13 @@ use Illuminate\Support\Facades\Hash;
 class AdminUserSeeder extends Seeder
 {
     public function run(): void
-    {
-        User::create([
+{
+    User::updateOrCreate(
+        ['email' => env('ADMIN_EMAIL', 'admin@admin.com')],
+        [
             'name' => 'Admin',
-            'email' => 'admin@admin.com',
-            'password' => Hash::make('123456'),
-        ]);
-    }
+            'password' => Hash::make(env('ADMIN_PASSWORD', '123456')),
+        ]
+    );
+}
 }
